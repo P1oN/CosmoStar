@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterHealth : MonoBehaviour
 {
@@ -28,7 +26,7 @@ public class CharacterHealth : MonoBehaviour
 
         currentAmount -= hitAmount;
 
-        if(currentAmount <= 0)
+        if (currentAmount <= 0)
         {
             Death();
         }
@@ -45,6 +43,10 @@ public class CharacterHealth : MonoBehaviour
             player.AddScore(scoreValue);
         }
         isDead = true;
+        if (tag == "Player")
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
         Destroy(gameObject);
     }
 }

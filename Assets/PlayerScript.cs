@@ -57,6 +57,7 @@ public class PlayerScript : MonoBehaviour
         shot.GetComponent<Rigidbody>().velocity = Vector3.forward * primaryBulletSpeed;
         nextPrimaryShot = Time.time + shotDelay;
     }
+
     private void SecondaryShoot()
     {
         GameObject leftShot = Instantiate(SmallLazerShot, SecondaryWeaponOne.position, Quaternion.Euler(0, 5, 0));
